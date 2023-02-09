@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <title>
+            Temp conv
+        </title>
+        <style>
+            #op{
+                color:rgb(83, 15, 220);
+                font-size:20;
+                background-color: rgb(9, 126, 215);
+            }
+            #po{
+                color:rgb(86, 9, 141);
+                font-size:20;
+                background-color:rgb(9,126,215);
+            }
+            #c{
+                color:rgb(86, 9, 141);
+                font-size:20;
+                background-color:rgb(9,126,215);
+
+            }
+            #cone{
+                background-color:fuchsia;
+                font-size:30;
+                color:rgb(216, 244, 7);
+
+            }
+
+        </style>
+    </head>
+    <body style="background-color:rgb(140, 121, 179)">
+        <h1 style="color:rgb(144, 31, 142);text-align:center">Temperature converter</h1>
+        <center>
+        <form style="font-size:30;color:white">
+            <label>Degrees</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <label>Type</label><br><br>
+            <input type="text" name="t" id="po"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        
+            <select id="op" >
+                <option>
+                   Fahrenheit
+                </option>
+                <option >
+                    Celsius
+                </option>
+               </select><br><br><br>
+            <label>Result</label><br><br>
+            <input type="text" name="p" value="result" id="c" size="30" /><br><br><br>
+        </center>
+           <center> <input type="button" value="Convert" id="cone" onclick="tempcon()"/></center>
+        </form>
+        <script>
+            function tempcon(){
+                var t=document.getElementById('po').value
+                var f=document.getElementById('op').value
+                if(Number.isNaN(t)==true){ 
+                    document.write("<h4>Not able to convert</h4>")
+                }
+                if(Number.isNaN(t)==false){ 
+                if(f=='Fahrenheit'){
+                    p=parseFloat((t-32)/1.8)
+                    p=p.toString()
+                    s='C'
+                    document.getElementById('c').value=p+'°'+s
+                }
+
+                else{
+                    p=parseFloat((t*1.8)+32)
+                    p=p.toString()
+                    document.getElementById('c').value=p+'°'+'F'
+                }
+            }
+                
+
+                
+            }
+            
+        </script>
+
+    </body>
+</html>
